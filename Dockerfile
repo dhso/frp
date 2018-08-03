@@ -2,7 +2,7 @@ FROM alpine:3.7
 
 ENV FRP_VERSION 0.20.0
 
-RUN mkdir frp && cd frp
+RUN mkdir /frp && cd /frp
 
 WORKDIR /frp
 
@@ -20,4 +20,4 @@ RUN wget --no-check-certificate https://github.com/fatedier/frp/releases/downloa
 
 EXPOSE 80 443 6000 7000 7500
 
-ENTRYPOINT ["frps"]
+ENTRYPOINT ["/frp/frps"]
