@@ -12,11 +12,11 @@ RUN wget --no-check-certificate https://github.com/fatedier/frp/releases/downloa
     cd .. && \
     rm -rf *.tar.gz && \
     rm -rf frp_${FRP_VERSION}_linux_amd64
-RUN mkdir frp
-RUN mv frps frp/frps && \
-    mv frpc frp/frpc && \
-    mv frps.ini frp/frps.ini && \
-    mv frpc.ini frp/frpc.ini && \
+RUN mkdir /frp && \
+    mv /frps /frp/frps && \
+    mv /frpc /frp/frpc && \
+    mv /frps.ini /frp/frps.ini && \
+    mv /frpc.ini /frp/frpc.ini && \
 
 WORKDIR /
 EXPOSE 80 443 6000 7000 7500
